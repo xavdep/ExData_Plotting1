@@ -1,5 +1,6 @@
 ##plot 3
 #getting and cleaning data
+library(lattice)
 mydata <- "household_power_consumption.txt"
 dataread <-  read.table(mydata, header = T, sep =";", dec = ".")
 
@@ -15,7 +16,6 @@ png("plot3.png", width = 480, height = 480)
 plot(mydate, submeter1, type = "l", xlab = "", ylab = "Energy sub metering") ## init graph with one value
 lines(mydate, submeter2, type = "l", col="red") ## add values on graph
 lines(mydate, submeter3, type = "l", col="blue") ## add values on graph
-
 legend("topright", lty=1, col = c("black", "red" ,"blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), bty = "o") 
 
 dev.off()
